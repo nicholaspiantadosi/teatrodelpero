@@ -45,15 +45,72 @@ Verificati il 2026-11-04:
 | Netlify CLI  | non installato (si usa `npx netlify-cli`) |
 | curl         | presente                       |
 | zip          | presente                       |
-| git          | la cartella NON è un repo git  |
+| git          | repo inizializzato, remote su GitHub (vedi §4) |
 
 ---
 
-## 4. Deploy automatico (script)
+## 4. Deploy automatico — flusso principale (CD da GitHub)
 
-È disponibile lo script **`scripts/deploy.sh`** che pubblica la cartella `site/`
-su Netlify tramite la CLI ufficiale (`npx netlify-cli deploy`), senza bisogno di
-trascinare file a mano.
+Il metodo **consigliato e principale** è il *continuous deployment* di Netlify
+collegato al repository Git: a ogni `git push` sul branch `main`, Netlify ricostruisce
+e pubblica da solo. Le pull request generano automaticamente una **Deploy Preview**.
+
+### Repository
+
+- **Hosting codice:** GitHub (account personale `nicholaspiantadosi`), separato dal
+  GitLab di lavoro `git.myargo.it`.
+- **Remote:** `git@github.com:nicholaspiantadosi/teatrodelpero.git` (SSH).
+- **Branch pubblicato:** `main`.
+- **Identità commit (solo questo repo):** `Nicholas <nicholaspiantadosi@gmail.com>`
+  impostata con `git config --local` — la config globale non è toccata, così i commit
+  personali non si mescolano con quelli di lavoro.
+
+### Autenticazione SSH verso GitHub (su questa macchina)
+
+La chiave usata è `~/.ssh/id_ed25519_github`, dichiarata esplicitamente in
+`~/.ssh/config`:
+
+```
+Host github.com
+	HostName github.com
+	User git
+	IdentityFile ~/.ssh/id_ed25519_github
+	IdentitiesOnly yes
+```
+
+> Nota: il `~/.ssh/config` ha un blocco `Host *` con `IdentitiesOnly=yes`; senza il
+> blocco `Host github.com` qui sopra, SSH non presenterebbe alcuna chiave e GitHub
+> risponderebbe `Permission denied (publickey)`. La chiave **pubblica** corrispondente
+> è caricata su GitHub → *Settings → SSH and GPG keys*.
+
+Test rapido dell'autenticazione:
+
+```bash
+ssh -T git@github.com   # atteso: "Hi nicholaspiantadosi! ..."
+```
+
+### Pubblicare (flusso normale)
+
+```bash
+git add -A
+git commit -m "descrizione modifica"
+git push            # main è già in tracking con origin/main → parte il deploy
+```
+
+### Collegamento repo ↔ sito Netlify (da fare UNA volta)
+
+Netlify → progetto `magnificent-mandazi-6d5f44` →
+*Site configuration → Build & deploy → Continuous deployment → Link repository* →
+GitHub → `nicholaspiantadosi/teatrodelpero`. Branch: `main`. Build command: **vuoto**,
+Publish directory: **`site`** (letti comunque da `netlify.toml`).
+
+---
+
+## 5. Deploy manuale — fallback (script CLI)
+
+Quando il CD non è disponibile (o serve un'anteprima al volo), resta lo script
+**`scripts/deploy.sh`** che pubblica la cartella `site/` tramite la CLI ufficiale
+(`npx netlify-cli deploy`).
 
 ### Prerequisiti (da impostare UNA volta sola)
 
@@ -103,7 +160,7 @@ Lo script:
 
 ---
 
-## 5. Da fare / decisioni aperte
+## 6. Da fare / decisioni aperte
 
 - [x] Compilare `scripts/.deploy.env` con Site ID e token (fatto 2026-11-04;
       token in scadenza il **2027-02-02**).
@@ -111,17 +168,21 @@ Lo script:
       → `https://magnificent-mandazi-6d5f44.netlify.app` (confermato 2026-11-04).
 - [x] Riempire i contenuti reali del sito dal PDF
       `Il_Teatro_del_Pero_testi_sito_web.pdf` (fatto 2026-11-06, deploy in produzione
-      `deployId 6aed94eb4c9a3f3146601610`). Vedi §6.
+      `deployId 6aed94eb4c9a3f3146601610`). Vedi §7.
+- [x] Inizializzare un repo git e collegarlo a GitHub per il deploy continuo
+      (fatto 2026-11-06, remote `nicholaspiantadosi/teatrodelpero`). Vedi §4.
+- [ ] Completare su Netlify il *Link repository* per attivare il CD (vedi §4): finché non
+      è fatto, la pubblicazione resta manuale via `scripts/deploy.sh`.
 - [ ] Fornire i recapiti reali mancanti: **email** (resta segnaposto
       `info@teatrodelpero.it`) e **link Instagram** (resta `href="#"`). Presenti invece
       il telefono reale `392 4745053` e la pagina Facebook.
 - [ ] Valutare un dominio personalizzato (es. `www.teatrodelpero.it`, ~10–15 €/anno).
-- [ ] (Opzionale) inizializzare un repo git e collegare il deploy continuo da Git,
-      in alternativa al deploy via CLI.
 
 ---
 
-## 6. Contenuti pubblicati (2026-11-06)
+## 7. Contenuti pubblicati
+
+### 7.1 Testi dal PDF (2026-11-06)
 
 Fonte dei testi: `Il_Teatro_del_Pero_testi_sito_web.pdf` (estratto con `pdftotext -layout`).
 Riempiti i blocchi `SEGNAPOSTO` nelle pagine con i contenuti reali:
@@ -135,12 +196,26 @@ Riempiti i blocchi `SEGNAPOSTO` nelle pagine con i contenuti reali:
 - **produzioni.html** — repertorio reale: **17 spettacoli** con autori
   (Martoglio, Capuana, De Filippo, Scarpetta, Molière, ecc.). "In scena ora" rimanda alla
   stagione.
-- **laboratori.html** — ripensata come pagina **Domenica Rido** (il PDF non contiene
-  laboratori/corsi). Voce di menu rinominata da "Laboratori" a "Domenica Rido" su tutte le
-  pagine (header + footer).
 - **contatti.html** — "Ci vediamo a teatro", telefono reale `392 4745053`, sede
   Teatro Naselli (Comiso). Rimossi indirizzo e location inventati.
-- **footer (tutte le 6 pagine)** — descrizione breve e telefono reali.
+- **footer (tutte le pagine)** — descrizione breve e telefono reali.
 
 > `stagione.html` era già compilata con il cartellone reale "Domenica Rido" 2026/2027:
 > lasciata invariata, allineati solo footer e menu.
+
+### 7.2 Sezione Laboratorio (2026-11-06)
+
+Fonti: `laboratori.txt` (testo) e `laboratorio.jpeg` (locandina, copiata in
+`site/assets/img/laboratorio.jpeg`).
+
+- **laboratori.html** — ora è la pagina del laboratorio **“Il Gioco del Teatro”** a cura di
+  **Aldo Rapè** al Teatro Naselli di Comiso: percorso di 8 mesi, programma (respirazione,
+  dizione/voce, movimento, improvvisazione, recitazione, spazio/tempo scenico), quote
+  (adulti 60 €/mese, minori 35 €/mese, iscrizione annuale 20 €, sconto 25% stesso nucleo
+  familiare), spettacolo finale e coinvolgimento negli eventi PRIMAQUINTA.
+- **Immagine** — la locandina dell'Open Day (evento passato, venerdì 11 settembre, Spazio
+  Naselli) è usata come foto illustrativa della pagina, non come annuncio di una data futura.
+- **Menu** — la voce di navigazione è stata rinominata da "Domenica Rido" a **"Laboratorio"**
+  su tutte le pagine (header + footer) e la tile "03" della home ora rimanda a "Il Gioco del
+  Teatro". La rassegna Domenica Rido resta coperta da `stagione.html` e dalla sezione in
+  `chi-siamo.html`.
