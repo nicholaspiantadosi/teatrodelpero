@@ -171,8 +171,9 @@ Lo script:
       `deployId 6aed94eb4c9a3f3146601610`). Vedi §7.
 - [x] Inizializzare un repo git e collegarlo a GitHub per il deploy continuo
       (fatto 2026-11-06, remote `nicholaspiantadosi/teatrodelpero`). Vedi §4.
-- [ ] Completare su Netlify il *Link repository* per attivare il CD (vedi §4): finché non
-      è fatto, la pubblicazione resta manuale via `scripts/deploy.sh`.
+- [x] Completare su Netlify il *Link repository* per attivare il CD
+      (fatto 2026-11-06). Da ora ogni `git push` su `main` pubblica automaticamente:
+      **non** lanciare più `scripts/deploy.sh` a fine lavoro (resta solo come fallback).
 - [ ] Fornire i recapiti reali mancanti: **email** (resta segnaposto
       `info@teatrodelpero.it`) e **link Instagram** (resta `href="#"`). Presenti invece
       il telefono reale `392 4745053` e la pagina Facebook.
