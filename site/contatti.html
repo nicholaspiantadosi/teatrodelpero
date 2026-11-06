@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti — Teatro del Pero</title>
+  <meta name="description" content="Contatti del Teatro del Pero: email, telefono, social e le location dove ci esibiamo.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav">
+      <a href="index.html" class="brand">Teatro del <span>Pero</span></a>
+      <button class="nav-toggle" aria-label="Apri menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" data-open="false">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="stagione.html">Stagione</a></li>
+        <li><a href="produzioni.html">Produzioni</a></li>
+        <li><a href="laboratori.html">Domenica Rido</a></li>
+        <li><a href="contatti.html" aria-current="page">Contatti</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <span class="kicker">Contatti</span>
+        <h1>Ci vediamo a teatro</h1>
+        <p>Vuoi conoscere i prossimi appuntamenti, ricevere informazioni sulla rassegna o proporre una collaborazione? Contattaci: saremo felici di conoscerti.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:30px;">
+      <div class="wrap">
+        <div class="contact-grid">
+          <!-- ===================== RECAPITI ===================== -->
+          <div>
+            <!-- SEGNAPOSTO: recapiti reali -->
+            <div class="contact-item">
+              <div class="lbl">Info e prenotazioni</div>
+              <a href="tel:+393924745053">392 4745053</a>
+            </div>
+            <div class="contact-item">
+              <div class="lbl">Email</div>
+              <a href="mailto:info@teatrodelpero.it">info@teatrodelpero.it</a>
+            </div>
+            <div class="contact-item">
+              <div class="lbl">Social</div>
+              <div class="footer-social" style="margin-top:6px;">
+                <a href="https://www.facebook.com/associazioneteatrodelpero/" target="_blank" rel="noopener">Facebook</a>
+                <a href="#" target="_blank" rel="noopener">Instagram</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===================== LOCATION DI ESIBIZIONE ===================== -->
+          <div>
+            <div class="contact-item">
+              <div class="lbl">Dove ci esibiamo</div>
+            </div>
+            <!-- SEGNAPOSTO: location abituali di esibizione -->
+            <ul class="locations">
+              <li>Teatro Naselli — Piazza San Biagio, Comiso (RG)</li>
+              <li>Rassegna “Domenica Rido” — Stagione teatrale amatoriale</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <a href="index.html" class="brand">Teatro del <span>Pero</span></a>
+          <p>Associazione culturale. Dal 2004 teatro, tradizione siciliana e la rassegna “Domenica Rido”.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/associazioneteatrodelpero/" target="_blank" rel="noopener">Facebook</a>
+            <a href="#" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Naviga</h4>
+            <a href="chi-siamo.html">Chi siamo</a>
+            <a href="stagione.html">Stagione</a>
+            <a href="produzioni.html">Produzioni</a>
+            <a href="laboratori.html">Domenica Rido</a>
+            <a href="contatti.html">Contatti</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contatti</h4>
+            <a href="mailto:info@teatrodelpero.it">info@teatrodelpero.it</a>
+            <a href="tel:+393924745053">392 4745053</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> Associazione Teatro del Pero</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/menu.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

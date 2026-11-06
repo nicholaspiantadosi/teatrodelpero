@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teatro del Pero — Proposta B · Carta e inchiostro</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500&display=swap');
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  :root{ --paper:#faf7f2; --ink:#161412; --rust:#c0532e; --line:#e4ddd2; --muted:#7a736a; }
+  body{ font-family:'Inter',sans-serif; color:var(--ink); background:var(--paper); }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 48px; }
+
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:30px 48px; max-width:1180px; margin:0 auto; border-bottom:1px solid var(--line); }
+  .brand{ font-family:'Fraunces',serif; font-weight:600; font-size:23px; letter-spacing:-.5px; }
+  .brand span{ color:var(--rust); }
+  nav ul{ display:flex; gap:32px; list-style:none; }
+  nav a{ color:var(--ink); text-decoration:none; font-size:15px; font-weight:400; }
+  nav a.active{ color:var(--rust); }
+  .navcta{ font-size:14px; border:1px solid var(--ink); padding:9px 18px; border-radius:40px; text-decoration:none; color:var(--ink);}
+
+  .hero{ padding:90px 0 70px; display:grid; grid-template-columns:1.1fr .9fr; gap:60px; align-items:center; }
+  .eyebrow{ font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--rust); margin-bottom:24px; font-weight:500;}
+  h1{ font-family:'Fraunces',serif; font-weight:400; font-size:72px; line-height:1.02; letter-spacing:-1px; }
+  h1 em{ font-style:italic; }
+  .lead{ color:var(--muted); font-size:19px; line-height:1.65; max-width:440px; margin:28px 0 36px; font-weight:300;}
+  .cta{ display:flex; gap:14px; align-items:center;}
+  .btn{ text-decoration:none; font-size:15px; }
+  .btn-solid{ background:var(--ink); color:var(--paper); padding:14px 30px; border-radius:40px; }
+  .btn-text{ color:var(--ink); border-bottom:1px solid var(--rust); padding-bottom:3px; }
+
+  .hero-img{ aspect-ratio:4/5; border-radius:6px; position:relative; overflow:hidden;
+    background:linear-gradient(140deg,#d8ccbb,#b9a287); }
+  .hero-img::after{ content:"foto compagnia"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:rgba(0,0,0,.28); font-size:14px; letter-spacing:2px; text-transform:uppercase;}
+  .hero-img .cap{ position:absolute; left:18px; bottom:16px; background:var(--paper); padding:8px 14px; border-radius:30px; font-size:13px; z-index:2;}
+
+  .meta{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .meta .wrap{ display:grid; grid-template-columns:repeat(4,1fr); }
+  .meta .cell{ padding:34px 0; border-right:1px solid var(--line); padding-right:24px;}
+  .meta .cell:last-child{ border-right:none; }
+  .meta .num{ font-family:'Fraunces',serif; font-size:40px; }
+  .meta .lbl{ color:var(--muted); font-size:14px; margin-top:6px; }
+
+  .prod{ padding:72px 0 40px; }
+  .prod .head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:34px;}
+  .prod h2{ font-family:'Fraunces',serif; font-weight:400; font-size:34px; }
+  .prod .all{ color:var(--rust); text-decoration:none; font-size:15px;}
+  .cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  .card .ph{ aspect-ratio:3/2; border-radius:6px; background:linear-gradient(135deg,#cbb79f,#9f8468);}
+  .card h3{ font-family:'Fraunces',serif; font-size:21px; margin:14px 0 4px;}
+  .card p{ color:var(--muted); font-size:14px;}
+  .card .pill{ display:inline-block; font-size:12px; letter-spacing:1px; text-transform:uppercase; color:var(--rust); border:1px solid var(--rust); padding:3px 10px; border-radius:20px; margin-top:10px;}
+</style>
+</head>
+<body>
+  <div class="nav">
+    <div class="brand">Teatro del <span>Pero</span></div>
+    <nav><ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Chi siamo</a></li>
+      <li><a href="#">Produzioni</a></li>
+      <li><a href="#">Laboratori</a></li>
+    </ul></nav>
+    <a href="#" class="navcta">Contatti</a>
+  </div>
+
+  <section class="wrap hero">
+    <div>
+      <div class="eyebrow">Compagnia teatrale</div>
+      <h1>Storie che<br>si fanno <em>palco</em></h1>
+      <p class="lead">Produciamo spettacoli e conduciamo laboratori. Teatro semplice, diretto, fatto di presenza e ascolto.</p>
+      <div class="cta">
+        <a href="#" class="btn btn-solid">Scopri le produzioni</a>
+        <a href="#" class="btn btn-text">Guarda i laboratori</a>
+      </div>
+    </div>
+    <div class="hero-img"><span class="cap">La compagnia, 2024</span></div>
+  </section>
+
+  <section class="meta">
+    <div class="wrap">
+      <div class="cell"><div class="num">25+</div><div class="lbl">Anni di attività</div></div>
+      <div class="cell"><div class="num">40</div><div class="lbl">Spettacoli prodotti</div></div>
+      <div class="cell"><div class="num">6</div><div class="lbl">Premi ricevuti</div></div>
+      <div class="cell"><div class="num">3</div><div class="lbl">Laboratori attivi</div></div>
+    </div>
+  </section>
+
+  <section class="wrap prod">
+    <div class="head">
+      <h2>In produzione</h2>
+      <a href="#" class="all">Tutte le produzioni →</a>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="ph"></div><h3>La Tempesta</h3><p>da W. Shakespeare</p><span class="pill">In scena</span></div>
+      <div class="card"><div class="ph"></div><h3>Il Giardino</h3><p>produzione originale</p><span class="pill">In prova</span></div>
+      <div class="card"><div class="ph"></div><h3>Voci</h3><p>teatro di comunità</p><span class="pill">2025</span></div>
+    </div>
+  </section>
+</body>
+</html>

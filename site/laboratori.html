@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domenica Rido — Teatro del Pero</title>
+  <meta name="description" content="Domenica Rido: la rassegna di teatro amatoriale del Teatro del Pero, dal 2019. Compagnie siciliane in scena ogni domenica.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav">
+      <a href="index.html" class="brand">Teatro del <span>Pero</span></a>
+      <button class="nav-toggle" aria-label="Apri menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" data-open="false">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="stagione.html">Stagione</a></li>
+        <li><a href="produzioni.html">Produzioni</a></li>
+        <li><a href="laboratori.html" aria-current="page">Domenica Rido</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <span class="kicker">La rassegna</span>
+        <h1>Domenica Rido</h1>
+        <p>La domenica ha un appuntamento con il teatro. Dal 2019 la nostra rassegna dedicata al teatro amatoriale porta in scena le compagnie siciliane.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:30px;">
+      <div class="wrap">
+        <div class="grid" style="gap:16px;">
+          <!-- SEGNAPOSTO: un blocco .lab per ogni laboratorio -->
+          <div class="lab">
+            <div class="num">01</div>
+            <div>
+              <h3>Teatro amatoriale</h3>
+              <p>Un'occasione per scoprire le compagnie siciliane e condividere la passione per la scena, tra comicità, tradizioni e storie sempre diverse.</p>
+            </div>
+            <div class="meta">Dal 2019</div>
+          </div>
+          <div class="lab">
+            <div class="num">02</div>
+            <div>
+              <h3>Ogni domenica</h3>
+              <p>Un pomeriggio di spettacolo da vivere insieme: la domenica a teatro diventa un rito che unisce il pubblico e le compagnie.</p>
+            </div>
+            <div class="meta">Teatro Naselli · Comiso</div>
+          </div>
+          <div class="lab">
+            <div class="num">03</div>
+            <div>
+              <h3>Valorizzare le compagnie</h3>
+              <p>Un progetto che mette al centro il lavoro delle compagnie e il legame con gli spettatori, portando sul palcoscenico repertori sempre nuovi.</p>
+            </div>
+            <div class="meta">Rassegna</div>
+          </div>
+        </div>
+
+        <div style="margin-top:40px;">
+          <!-- SEGNAPOSTO: invito all'iscrizione -->
+          <a href="stagione.html" class="btn btn-terra">Scopri il programma &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <a href="index.html" class="brand">Teatro del <span>Pero</span></a>
+          <p>Associazione culturale. Dal 2004 teatro, tradizione siciliana e la rassegna “Domenica Rido”.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/associazioneteatrodelpero/" target="_blank" rel="noopener">Facebook</a>
+            <a href="#" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Naviga</h4>
+            <a href="chi-siamo.html">Chi siamo</a>
+            <a href="stagione.html">Stagione</a>
+            <a href="produzioni.html">Produzioni</a>
+            <a href="laboratori.html">Domenica Rido</a>
+            <a href="contatti.html">Contatti</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contatti</h4>
+            <a href="mailto:info@teatrodelpero.it">info@teatrodelpero.it</a>
+            <a href="tel:+393924745053">392 4745053</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> Associazione Teatro del Pero</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/menu.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

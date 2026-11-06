@@ -1,0 +1,8 @@
+# credenziali di deploy — MAI versionarle
+scripts/.deploy.env
+
+# cartelle di stato della CLI Netlify
+.netlify/
+
+# sistema
+.DS_Store

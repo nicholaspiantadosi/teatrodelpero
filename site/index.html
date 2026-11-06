@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teatro del Pero — Compagnia teatrale</title>
+  <meta name="description" content="Teatro del Pero: compagnia teatrale. Spettacoli, laboratori, produzioni e teatro di comunità.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER (identico su tutte le pagine) ===================== -->
+  <header class="site-header">
+    <div class="nav">
+      <a href="index.html" class="brand">Teatro del <span>Pero</span></a>
+      <button class="nav-toggle" aria-label="Apri menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" data-open="false">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="stagione.html">Stagione</a></li>
+        <li><a href="produzioni.html">Produzioni</a></li>
+        <li><a href="laboratori.html">Domenica Rido</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="wrap">
+        <span class="kicker">Compagnia teatrale</span>
+        <h1><span class="fill">Teatro</span><br><span class="out">del Pero</span></h1>
+        <div class="hero-mid">
+          <!-- SEGNAPOSTO: frase di presentazione della compagnia (1-2 righe) -->
+          <p class="hero-lead">Dal 2004, la passione per il teatro diventa incontro. Portiamo in scena storie, risate ed emozioni, dando voce alla tradizione siciliana e ai grandi autori della commedia.</p>
+          <a href="produzioni.html" class="btn btn-mustard">Vieni a teatro &rarr;</a>
+        </div>
+
+        <!-- SEGNAPOSTO IMMAGINE: per inserire una foto, aggiungi la classe "has-img"
+             al div .ph e un <img src="assets/img/tua-foto.jpg" alt="..."> all'interno -->
+        <div class="bigimg">
+          <div class="ph" data-label="Foto di scena" style="position:absolute; inset:0; border-radius:20px;"></div>
+          <!-- SEGNAPOSTO: prossimo spettacolo in evidenza -->
+          <a href="stagione.html" class="badge">&#9654; Domenica Rido &middot; Stagione 2026/2027</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TICKER ===================== -->
+    <div class="ticker" aria-hidden="true">
+      <div class="track">
+        <!-- SEGNAPOSTO: parole chiave scorrevoli -->
+        <span>Tradizione siciliana</span><span class="dot">&#9679;</span>
+        <span>Commedia</span><span class="dot">&#9679;</span>
+        <span>Domenica Rido</span><span class="dot">&#9679;</span>
+        <span>Dal 2004</span><span class="dot">&#9679;</span>
+        <span>Teatro amatoriale</span><span class="dot">&#9679;</span>
+        <span>Tradizione siciliana</span><span class="dot">&#9679;</span>
+        <span>Commedia</span><span class="dot">&#9679;</span>
+        <span>Domenica Rido</span><span class="dot">&#9679;</span>
+        <span>Dal 2004</span><span class="dot">&#9679;</span>
+        <span>Teatro amatoriale</span><span class="dot">&#9679;</span>
+      </div>
+    </div>
+
+    <!-- ===================== SCORCIATOIE SEZIONI ===================== -->
+    <section class="section">
+      <div class="wrap">
+        <div class="grid grid-3">
+          <a href="chi-siamo.html" class="tile">
+            <div class="n">01 — Chi siamo</div>
+            <h3>La compagnia</h3>
+            <p>Componenti, storia e i premi che raccontano il nostro percorso.</p>
+            <div class="arrow">Scopri &rarr;</div>
+          </a>
+          <a href="produzioni.html" class="tile">
+            <div class="n">02 — Produzioni</div>
+            <h3>Gli spettacoli</h3>
+            <p>Il nostro repertorio, dalla tradizione siciliana ai grandi autori della commedia.</p>
+            <div class="arrow">Scopri &rarr;</div>
+          </a>
+          <a href="laboratori.html" class="tile">
+            <div class="n">03 — Domenica Rido</div>
+            <h3>La rassegna</h3>
+            <p>Dal 2019, la domenica a teatro con le compagnie amatoriali siciliane.</p>
+            <div class="arrow">Scopri &rarr;</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROSSIMO SPETTACOLO ===================== -->
+    <section class="section" style="padding-top:0;">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>Domenica Rido — in programma</h2>
+          <a href="stagione.html">Tutta la stagione &rarr;</a>
+        </div>
+        <div class="grid grid-3">
+          <!-- SEGNAPOSTO: ripeti/modifica queste card con gli spettacoli attuali -->
+          <a href="stagione.html#io-tu-e-silvana" class="tile prod-card">
+            <div class="ph" data-label="Locandina"></div>
+            <h3>IO, tu e Silvana</h3>
+            <p>Theatron &middot; dom 13 dicembre, ore 18:00</p>
+            <span class="pill">In scena</span>
+          </a>
+          <a href="stagione.html#campane" class="tile prod-card">
+            <div class="ph" data-label="Locandina"></div>
+            <h3>Campane</h3>
+            <p>Teatro Iris &middot; dom 10 gennaio, ore 18:00</p>
+            <span class="pill">In arrivo</span>
+          </a>
+          <a href="stagione.html#maliditta-la-miseria" class="tile prod-card">
+            <div class="ph" data-label="Locandina"></div>
+            <h3>Maliditta la miseria</h3>
+            <p>Teatro Stabile Nisseno &middot; dom 24 gennaio, ore 18:00</p>
+            <span class="pill">In arrivo</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER (identico su tutte le pagine) ===================== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <a href="index.html" class="brand">Teatro del <span>Pero</span></a>
+          <!-- SEGNAPOSTO: breve descrizione -->
+          <p>Associazione culturale. Dal 2004 teatro, tradizione siciliana e la rassegna “Domenica Rido”.</p>
+          <div class="footer-social">
+            <!-- SEGNAPOSTO: link social reali -->
+            <a href="https://www.facebook.com/associazioneteatrodelpero/" target="_blank" rel="noopener">Facebook</a>
+            <a href="#" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Naviga</h4>
+            <a href="chi-siamo.html">Chi siamo</a>
+            <a href="stagione.html">Stagione</a>
+            <a href="produzioni.html">Produzioni</a>
+            <a href="laboratori.html">Domenica Rido</a>
+            <a href="contatti.html">Contatti</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contatti</h4>
+            <!-- SEGNAPOSTO: recapiti reali -->
+            <a href="mailto:info@teatrodelpero.it">info@teatrodelpero.it</a>
+            <a href="tel:+393924745053">392 4745053</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> Associazione Teatro del Pero</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/menu.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

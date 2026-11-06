@@ -1,0 +1,14 @@
+# Configurazione Netlify per il sito Teatro del Pero.
+# Sito statico: nessun build step. La cartella pubblicata è "site/".
+# Questo file sta nella RADICE del progetto, dove la CLI lo cerca.
+
+[build]
+  publish = "site"
+  command = ""
+
+# Piccole intestazioni di sicurezza, innocue per un sito statico.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
